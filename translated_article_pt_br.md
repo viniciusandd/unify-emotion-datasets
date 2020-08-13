@@ -62,9 +62,9 @@ Outra categoria relacionada de recursos lexicais que tem sido usada para anális
 
 Uma melhoria de desempenho em relação à consulta de dicionário foi observada com o aprendizado supervisionado baseado em recursos. Os recursos comuns incluem palavras n-gramas, caracteres n-gramas, embeddings de palavras, léxicos de afeto, negação, pontuação, emoticons ou hashtags (Mohammad, 2012). Essa representação de característica é então geralmente usada como entrada para alimentar classificadores como ingênuo Bayes, SVM (Mohammad, 2012), MaxEnt e outros para prever a categoria de emoção relevante (Aman e Szpakowicz, 2007; Alm et al., 2005). Da mesma forma que a mudança de paradigma na análise de sentimento, da modelagem baseada em recursos para o aprendizado profundo, os modelos de última geração para classificação de emoções são frequentemente baseados em redes neurais (Barnes et al., 2017). Schuff et al. (2017) aplicaram modelos das classes CNN, BiLSTM (Schuster e Paliwal, 1997) e LSTM (Hochreiter e Schmidhuber, 1997) e os compararam com classificadores lineares (SVM e MaxEnt), onde o BiLSTM apresenta melhores resultados com a maioria precisão e recall equilibrados. Abdul-Mageed e Ungar (2017) afirmam o F1 mais alto seguindo o modelo de emoção de Plutchik com redes de unidades recorrentes bloqueadas (Chung et al., 2015).
 
-Uma abordagem para lidar com a dispersão de conjuntos de dados é a aprendizagem por transferência; para fazer uso de recursos semelhantes e, em seguida, transferir o modelo para a tarefa real. Um exemplo recente de sucesso para este procedimento é Felbo et al. (2017) que apresentam um modelo de rede neural treinado em emoticons que é então transferido para diferentes tarefas posteriores, ou seja, a previsão de sentimento, sarcasmo e emoções.
+![alt text](./images/table1.png)
 
-(Adicionar Table 1)
+Uma abordagem para lidar com a dispersão de conjuntos de dados é a aprendizagem por transferência; para fazer uso de recursos semelhantes e, em seguida, transferir o modelo para a tarefa real. Um exemplo recente de sucesso para este procedimento é Felbo et al. (2017) que apresentam um modelo de rede neural treinado em emoticons que é então transferido para diferentes tarefas posteriores, ou seja, a previsão de sentimento, sarcasmo e emoções.
 
 ## 3 Conjunto de dados unificado de anotações de emoção
 
@@ -128,7 +128,7 @@ Nesta seção, descrevemos cada conjunto de dados que agregamos em nosso corpus 
 
     O Twitter Emotion Corpus publicado por Mohammad (2012) é construído nas redes sociais. É composto por 21.051 tweets. O objetivo principal deste recurso é responder à pergunta se hashtags de palavras emocionais podem ser usadas com sucesso como rótulos de emoção. O esquema de anotação corresponde ao modelo de emoções básicas de Ekman. Eles coletaram tweets com hashtags correspondentes às seis emoções do Ekman: #anger, #disgust, #fear, #happy, #sadness e #surprise, portanto, é anotado distantemente em um único rótulo. Ele pode ser baixado gratuitamente para fins de pesquisa.
 
-(Adicionar Table 2)
+![alt text](./images/table2.png)
 
 ### 3.2 Análise
 
@@ -140,7 +140,7 @@ A Figura 1 mostra uma comparação de similaridade quantitativa dos dados. Repre
 
 A coluna All representa a união de todos os conjuntos de dados, exceto aquele que está sendo comparado. Nesse contexto, o mais diferente em relação ao respectivo conjunto agregado é AffectiveText. A razão é que este é um pequeno conjunto de dados em comparação com os corpora baseados em tweet e que cobre um tópico específico, as manchetes. O Grounded-Emotions também é notavelmente diferente. Mais semelhante a All é EmoInt, seguido de perto por TEC e Blogs, que cobre postagens de blog e não tweets.
 
-(Adicionar Figure 1)
+![alt text](./images/figure1.png)
 
 ### 3.3 Agregação
 
@@ -172,7 +172,7 @@ Em termos de procedimentos de anotação, esses experimentos quase não permitem
 
 Classificação de emoção entre corpus Os resultados dentro do corpus (a diagonal na Figura 2) mostram pontuações F1 mais altas do que os resultados entre corpus. A exceção são os Tweets Eleitorais, onde o mesmo desempenho é observado por meio de treinamento em um corpus diferente, os Blogs. Os modelos treinados nos dados do Twitter têm um desempenho um pouco melhor em outros conjuntos do Twitter, com exceção dos Tweets Eleitorais, para os quais a distribuição de rótulos é diferente, com repulsa dominando o conjunto.
 
-(Adicionar Table 3)
+![alt text](./images/table3.png)
 
 É notável que EmoInt, Emotion-Stimulus, Grounded-Emotions ISEAR e SSEC são mais fáceis de classificar (alto desempenho quando usado para teste), enquanto DailyDialogs, Blogs, CrowdFlower e Tales são mais informativos: treinando neles e classificando outros leads de conjuntos de dados para melhores resultados. Os modelos treinados em ISEAR e SSEC têm um desempenho comparativamente bom. DailyDialogs é melhor classificado não por um classificador treinado em si mesmo, mas por um classificador treinado em blogs.
 
@@ -188,7 +188,7 @@ Conjuntos de dados anotados para classificação de emoção são importantes na
 
 Além desta revisão da literatura, fornecemos um corpus unificado e agregado para apoiar pesquisas futuras sobre dados padronizados. A existência de tal benchmark abre a possibilidade de outros experimentos, como aprendizagem por transferência e trabalho de adaptação de domínio, com foco em diferentes domínios e em diferentes conjuntos de rótulos. A partir dos conjuntos de dados unificados coletados, pode-se aprender como selecionar o conjunto de dados mais adequado para um determinado novo domínio e avaliá-lo em diferentes modelos de classificação, domínios e procedimentos de anotação, mais fácil do que era possível até agora. Também ter isso aberto ajudará a tarefa de detecção de emoções a se tornar uma tarefa padrão na qual os métodos mais modernos usados ​​na classificação geral são testados, da mesma forma que outras tarefas como a classificação de sentimento, que já desempenha esse papel.
 
-(Adicionar Figure 2)
+![alt text](./images/figure2.png)
 
 Além disso, este trabalho pode ser usado por qualquer pessoa que queira explorar o estado atual do campo da análise de emoções. Como trabalho futuro, planejamos lançar outra versão do conjunto de dados em que a conversão entre os diferentes modelos de emoção são adicionados e realizar experimentos de aprendizagem de transferência entre conjuntos de dados, domínios e procedimentos de anotação. Além disso, propomos usar o recurso para analisar qualitativamente as diferentes realizações de emoções em esquemas e domínios de anotação.
 
